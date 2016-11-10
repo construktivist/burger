@@ -33,7 +33,7 @@ var orm = {
 	},
 		// vals is an array of values that we want to save to cols
 		// cols are the columns we want to insert the values into
-	insertOne: function (table, cols, vals, cb) {
+	insertOne: function (table, cols, vals, callback) {
 		var queryString = 'INSERT INTO ' + table;
 
 		queryString = queryString + ' (';
@@ -47,23 +47,23 @@ var orm = {
 
 		connection.query(queryString, vals, function (err, result) {
 			if (err) throw err;
-			cb(result);
+			callback(result);
 		});
 	},
 		// objColVals would be the columns and values that you want to update
 		// an example of objColVals would be {name: panther, sleepy: true}
-	updateOne: function (table, objColVals, condition, cb) {
+	updateOne: function (table, objColVals, condition, callback) {
 		var queryString = 'UPDATE ' + table;
 
 		queryString = queryString + ' SET ';
-		queryString = queryString + objToSql(objColVals);
+		queryString = queryString + "devoured = 1";
 		queryString = queryString + ' WHERE ';
 		queryString = queryString + condition;
 
 		console.log(queryString);
 		connection.query(queryString, function (err, result) {
 			if (err) throw err;
-			cb(result);
+			callback(result);
 		});
 	},
 };
