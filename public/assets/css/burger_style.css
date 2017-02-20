@@ -1,0 +1,27 @@
+html{
+  height: 100%;
+}
+
+body{
+  background: url("//giphy.com/embed/l2SpNLZQSlENDKAkU") repeat;
+  height: 100%;
+}
+
+.container{
+  background-color: #b0cdfc;
+  height: 100%;
+}
+
+.header{
+  background-color: #22246b;
+  margin-left: 10px;
+  color: white;
+}
+
+.subheader{
+  color: #22246b
+}
+
+.pad-left{
+  padding-left: 100px;
+}
